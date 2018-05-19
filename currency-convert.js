@@ -22,7 +22,7 @@ let getExchangeRate = async (from, to) => {
         let rate = euro * response.data.rates[to];
         return rate;
     } catch {
-        return 1;
+        throw new Error(`Impossible to convert from ${from} to ${to}.`);
     }
 
 };
